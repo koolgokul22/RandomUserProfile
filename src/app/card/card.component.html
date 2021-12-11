@@ -1,0 +1,43 @@
+<div class="card bg-dark border-primary img-thumbnail">
+    <div class="card-body text-center">
+        <img 
+        [src]="user.picture?.large" 
+        alt="" width = 150 height = 150 
+        class="rounded-circle img-thumbnail border-primary"/>
+    </div>
+    <div class="card-title text-white">
+        <h1>
+            <span class="px-2 m-auto">{{user.name?.title}}</span>
+            <span class="px-2">{{user.name?.first}}</span>
+            <span class="px-2">{{user.name?.last}}</span>
+        </h1>
+    </div>
+    <div class="card-text text-white">
+        <p>
+        <fa-icon [icon]="faEnvelope" class="text-primary"></fa-icon>
+        <span class="px-2">{{user.email}}</span>
+        </p>
+    </div>
+    <div class="card-text text-white">
+        <p>
+        <fa-icon [icon]="faMapMarkedAlt" class="text-primary"></fa-icon>
+        <span class="px-2">{{user.location?.state}},</span>
+        <span>{{user.location?.country}}</span>
+        </p>
+    </div>
+    <div class="card-text text-white">
+        <p>
+        <fa-icon [icon]="faPhone" class="text-primary"></fa-icon>
+        <span class="px-2">{{user.phone}}</span>
+        </p>
+    </div>
+    <div class="card-text text-white">
+        <p>
+        <fa-icon [icon]="faDatabase" class="text-primary"></fa-icon>
+        <span class="px-2 mb-8">Registered on {{user.registered?.date | date}}</span>
+        </p>
+    </div>
+    <button 
+    (click)="clickNext()"
+    class="btn btn-primary text-white">Next</button>
+</div>
